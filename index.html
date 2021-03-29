@@ -1,0 +1,40 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    
+    <title>Web Screen Saver</title>
+    <meta name="description" content="Screen Saver for my TV">
+    <meta name="author" content="SitePoint">
+    
+    <!-- <link rel="stylesheet" href="css/styles.css?v=1.0"> -->
+
+</head>
+
+<body>
+    <video src="http://dash.link/uploads/aquarium_cut.mp4"   id="video" class="video" autoplay muted poster="bg.jpg" loop>
+    </video>
+    <style>
+        html, body {
+            padding: 0;
+            margin: 0;
+            background: #000;
+        }
+        #video {
+            width: 100%;
+            height: 100%;
+            padding: 0;
+            margin: 0;
+        }
+    </style>
+    <script>
+        document.getElementById('video').addEventListener('loadedmetadata', function() {
+            start = Math.floor(Math.random() * Math.floor(this.duration-100))
+            this.currentTime = start;
+            console.log(start)
+        }, false);
+    </script>
+    <!-- <script src="js/scripts.js"></script> -->
+</body>
+</html>
